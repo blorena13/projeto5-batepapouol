@@ -1,0 +1,101 @@
+body {
+    width: 375px;
+    background-color: #E5E5E5;
+   
+}
+
+header {
+    background-color: #FFFFFF;
+    display: flex;
+    width: 375px;
+    height: 80px;
+
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    z-index: 1;
+
+    box-shadow: 0px 4px  #0000000D;
+    
+}
+
+.enviar-mensagem {
+    background-color: #FFFFFF;
+    box-shadow: 0px -4px  #0000000D;
+    width: 375px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+img {
+    width: 75px;
+    height: 53px;
+    margin-left: 22px;
+
+}
+
+.people {
+    width: 42.19px;
+    height: 30.94px;
+    margin-right: 22px;
+
+}
+
+.paper {
+    width: 26px;
+    height: 26px;
+
+    margin-right: 18px;
+
+}
+
+.feed {
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    height: 481px;
+
+    margin-top:106px;
+    
+}
+
+input {
+    width: 145px;
+    height: 30px;
+    font-family: roboto;
+    font-size: 18px;
+    font-weight: 400;
+    color:black;
+    border: none;
+
+    margin-left: 17px;
+}
+
+.conversa-todos {
+    background-color: #FFFFFF;
+    width: 375px;
+    height: 40px;
+    margin-bottom: 4px;
+}
+
+.reservado {
+    background-color:#FFDEDE;
+    width: 375px;
+    height: 40px;
+    margin-bottom: 4px;
+}
+
+.entra-sala, .sai-sala {
+    background-color: #DCDCDC;
+    width: 375px;
+    height: 40px;
+    margin-bottom: 4px;
+}
