@@ -4,6 +4,7 @@ const feed = document.querySelector('.feed');
 
 let mensagens = [];
 
+entradaUsuario();
 
 function entradaUsuario() {
 
@@ -19,9 +20,10 @@ function deuRuim(error) {
     const statusCode = error.response.status;
 
     if (statusCode === 400) {
+        alert('Nome indisponível! Digite outro, por favor.');
 
-        nomeErros();
-        window.location.reload()
+        
+        window.location.reload();
 
     }
 }
@@ -33,18 +35,13 @@ function presencaStatus() {
 }
 
 function statusPrincipal() {
-    presencaStatus;
+    presencaStatus();
     setInterval(presencaStatus, 5000);
     mensagensChegou(); //cria mensagens
     setInterval(mensagensChegou, 3000);
 }
 
-function nomeErros() {
-    usuario = [
-        { name: prompt('Nome indisponível! Digite outro, por favor.') }
 
-    ];
-}
 
 function mensagensChegou() {
     const promessaget = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages'); // colocar aqui o código da tela principal, cria mensagens
@@ -56,44 +53,45 @@ function mensagensChegou() {
 mensagensChegou();
 
 function certoMensagens(conversa) { // todas as mensagens
-    const msg = conversa.data;
+    const mensagens = conversa.data;
     console.log(conversa)
     feed.innerHTML = "";
 
-    for (let i = 0; i < msg.length; i++) {
+    for (let i = 0; i < mensagens.length; i++) {
 
-        if (msg[i].type === "status") {
+        if (mensagens[i].type === "status") {
 
             feed.innerHTML +=
 
                 `<div data-test= "message" class="sala">
             <span class="time">(${mensagens[i].time})</span>
-            <span class="name">${mensagens[i].from}</span>
+            <strong class="name">${mensagens[i].from} </strong>
             <span class="text">${mensagens[i].text}</span>
         </div>
         `;
-        } else if (msg[i].type === "message") {
+        } else if (mensagens[i].type === "message") {
 
             feed.innerHTML +=
 
                 `<div data-test= "message" class="conversa-todos">
 
                 <span class="time">(${mensagens[i].time})</span>
-                <span class="name">${mensagens[i].from}</span>
-                <p> class="text">para</p>
+               <strong class="name">${mensagens[i].from}</strong>
+                <p class="text">para</p>
                 <span class="name">${mensagens[i].to}</span>
                 <span class="text">${mensagens[i].text}</span>
            
            
         </div>
         `;
-        } else if (msg[i].type === "private-message" && (usuario.name === msg[i].from || usuario.name === msg[i].to)){
+        } else if (mensagens[i].type === "private-message" && (usuario.name === mensagens[i].from || usuario.name === mensagens[i].to)){
+            feed.innerHTML +=
 
             `<div data-test= "message" class="reservado">
 
             <span class="time">(${mensagens[i].time})</span>
-            <span class="name">${mensagens[i].from}</span>
-            <p> class="text">reservadamente para</p>
+            <strong class="name">${mensagens[i].from}</strong>
+            <p class="text">reservadamente para</p>
             <span class="name">${mensagens[i].to}</span>
             <span class="text">${mensagens[i].text}</span>
        
@@ -103,6 +101,7 @@ function certoMensagens(conversa) { // todas as mensagens
             
 
         }
+        feed.lastChild.scrollIntoView();
 
     }
 
@@ -115,9 +114,6 @@ function MandarMensagens() {
     const enviar = document.querySelector('.digitar').value;
     document.querySelector('.digitar').value = '';
 
-    if (enviar === ''){
-        return enviar;
-    };
 
     const Novamensagem = {
         from: usuario.name,
