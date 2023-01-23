@@ -84,7 +84,7 @@ function certoMensagens(conversa) { // todas as mensagens
            
         </div>
         `;
-        } else if (mensagens[i].type === "private-message" && (usuario.name === mensagens[i].from || usuario.name === mensagens[i].to)){
+        } else if (mensagens[i].type === "private_message" && (usuario.name === mensagens[i].from || usuario.name === mensagens[i].to)){
             feed.innerHTML +=
 
             `<div data-test= "message" class="reservado">
@@ -101,10 +101,10 @@ function certoMensagens(conversa) { // todas as mensagens
             
 
         }
-        feed.lastChild.scrollIntoView();
+        
 
     }
-
+    feed.lastChild.scrollIntoView();
 
 }
 

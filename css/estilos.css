@@ -58,14 +58,23 @@ img {
 }
 
 .feed {
-    background-color: pink;
+    width:375px;
+    background-color: #F3F3F3;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 481px;
     font-weight: 400px;
-
+    font-family: roboto;
+    line-height: 16.41px;
+    font-size: 14px;
+    
     margin-top:106px;
+    margin-bottom: 80px;
+
+    
+    overflow: hidden;
+    overflow-wrap:break-word;
+    
     
 }
 
@@ -82,30 +91,56 @@ input {
 }
 
 .conversa-todos {
-    background-color: #FFFFFF;
+    width: 358px;
+    background-color:  #FFFFFF;
     display: flex;
     align-items: center;
-    width: 375px;
-    height: 40px;
+    
+    
+    
     margin-bottom: 4px;
+    margin-left: 8px;
+    padding: 5px;
+    
+    
+    flex-wrap: wrap;
+   
+    
 }
 
 .reservado {
+    width: 358px;
     background-color:#FFDEDE;
     display: flex;
     align-items: center;
-    width: 375px;
-    height: 40px;
+    
+    
     margin-bottom: 4px;
+    margin-left: 8px;
+    padding: 5px;
+
+    
+    flex-wrap: wrap;
+    
+    
+    
 }
 
 .sala {
+    width: 358px;
     background-color: #DCDCDC;
     display: flex;
     align-items: center;
-    width: 375px;
-    height: 40px;
+    
+    
     margin-bottom: 4px;
+    margin-left: 8px;
+    padding: 5px;
+
+    
+    flex-wrap: wrap;
+
+   
 }
 
 .time {
@@ -116,5 +151,12 @@ input {
 }
 
 .name {
-    font-weight: 700px;
+    font-weight: bold;
+    
+    margin-right: 5px;
 }
+
+.feed p {
+    margin-right: 5px;
+}
+
